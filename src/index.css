@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-foreground font-sans antialiased overflow-x-hidden;
+    background-color: #f6f4ee;
+    background-image:
+      linear-gradient(#e6e2d6 1px, transparent 1px),
+      linear-gradient(90deg, #e6e2d6 1px, transparent 1px);
+    background-size: 28px 28px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+}
+
+@layer components {
+
+  /* Behance Style Brutalist / Editorial UI */
+  .border-brutal {
+    @apply border-[3px] border-foreground;
+  }
+
+  .border-b-brutal {
+    @apply border-b-[3px] border-foreground;
+  }
+
+  .border-x-brutal {
+    @apply border-x-[3px] border-foreground;
+  }
+
+  .border-t-brutal {
+    @apply border-t-[3px] border-foreground;
+  }
+
+  .border-y-brutal {
+    @apply border-y-[3px] border-foreground;
+  }
+
+  .shadow-brutal {
+    box-shadow: 8px 8px 0px 0px #111111;
+    transition: all 0.3s ease;
+  }
+
+  .shadow-brutal:hover {
+    box-shadow: 10px 10px 0px 0px #6b00dd;
+    transform: translate(-2px, -2px);
+  }
+
+  /* Different shadow for stacked polaroids */
+  .shadow-stack {
+    box-shadow: 4px 4px 0px 0px #111111;
+  }
+
+  .section-container {
+    @apply max-w-[90rem] mx-auto px-6 md:px-12 lg:px-20 border-x-brutal;
+  }
+
+  .badge-editorial {
+    @apply inline-flex items-center px-3 py-1.5 border-brutal text-xs font-bold uppercase tracking-widest bg-white;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 10s linear infinite;
+  }
+
+  .text-outline {
+    -webkit-text-stroke: 2px #111111;
+    color: transparent;
+  }
+
+  .text-outline-accent {
+    -webkit-text-stroke: 2px #6b00dd;
+    color: transparent;
+  }
+}
